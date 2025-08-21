@@ -1,123 +1,133 @@
 :root {
-    --fuenteHeading: 'Pt Sans', sans-serif;
-    --fuenteParrafos: 'Open Sans', sans-serif;
+  --fuenteHeading: 'PT Sans', sans-serif;
+  --fuenteParrafos: 'Open Sans', sans-serif;
 
-    --primario: #000000;
-    --blanco: #ffffff;
-    --negro: #000000;
-    --dorado: #c9c902;
+  --azulOscuro: #0c1b2a;
+  --dorado: #c9c902;
+  --blanco: #ffffff;
+  --grisClaro: #f5f5f5;
+  --grisMedio: #cccccc;
+  --negro: #000000;
+
+  --rojoComida: #b03a2e;
+  --amarilloSuave: #f7dc6f;
+  --verdeSuave: #a9dfbf;
+
+  --hover: #d4ac0d;
+  --sombra: rgba(0, 0, 0, 0.15);
 }
 
 html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-    background-color: rgb(180, 180, 180);
+  box-sizing: border-box;
+  font-size: 62.5%;
+  background-color: var(--azulOscuro);
+  color: var(--blanco);
 }
 
 *, *::before, *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
+
 body {
-    font-family: var(--fuenteParrafos);
-    font-size: 1.6rem;
-    line-height: 2;
+  font-family: var(--fuenteParrafos);
+  font-size: 1.6rem;
+  line-height: 2;
+  background-color: var(--grisMedio);
+  color: var(--blanco);
 }
 
 /* Globales */
 .contenedor {
-    max-width: 120rem;
-    width: 90%;
-    margin: 0 auto;
+  max-width: 120rem;
+  width: 90%;
+  margin: 0 auto;
 }
+
 a {
-    text-decoration: none;
+  text-decoration: none;
+  color: var(--dorado);
 }
 
 h1, h2, h3, h4 {
-    font-family: var(--fuenteHeading);
+  font-family: var(--fuenteHeading);
+  color: var(--negro);
 }
-h1 {
-    font-size: 4.8rem;
-}
-h2 {
-    font-size: 4rem;
-}
-h3 {
-    font-size: 3.2rem;
-}
-h4 {
-    font-size: 2.8rem;
-}
+
+h1 { font-size: 4.8rem; }
+h2 { font-size: 4rem; }
+h3 { font-size: 3.2rem; }
+h4 { font-size: 2.8rem; }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
-.no-margin {
-    margin: 0;
-}
-.no-padding {
-    padding: 0;
-}
-.centrar-texto {
-    text-align: center;
-}
-/* Header  */
+
+.no-margin { margin: 0; }
+.no-padding { padding: 0; }
+.centrar-texto { text-align: center; }
+
+/* Header */
 .header {
-    height: 50rem;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.626), rgba(0, 0, 0, 0.5)),  url(/img/fondo.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
-
+  height: 50rem;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.626), rgba(0, 0, 0, 0.5)), url(/img/fondo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
 }
+
 .header__texto {
-    text-align: center;
-    color: var(--negro);
-    margin-top: 5rem;
-    font-size: 4rem;
+  text-align: center;
+  color: var(--blanco);
+  margin-top: 5rem;
+  font-size: 4rem;
+}
 
-}
 @media (min-width: 768px) {
-    .barra {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+  .barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
+
 @media (min-width: 768px) {
-    .navegacion {
-        display: flex;
-        gap: 2rem;
-        }
-    }   
+  .navegacion {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
 .logo__nombre {
-    color: var(--negro);
+  color: var(--negro);
 }
-.navegacion__enlace {
-    color: #000000;
-}
-.navegacion__enlace {
-    display: block;
-    text-align: center;
-    font-size: 1.8rem;
-    color: var(--negro);
-}
-/* reservas */
 
+.navegacion__enlace {
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--negro);
+}
+
+.navegacion__enlace:hover {
+  color: var(--hover);
+}
+
+/* reservas */
 .reserva-horizontal {
   max-width: 100%;
   padding: 20px;
-  background: #fff;
+  background: var(--grisClaro);
   border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  box-shadow: 0 0 8px var(--sombra);
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
+  color: var(--negro);
 }
 
 .reserva-horizontal h2 {
   margin-bottom: 15px;
   font-size: 22px;
-  color: #333;
+  color: var(--rojoComida);
 }
 
 .reserva-horizontal form {
@@ -133,15 +143,15 @@ img {
 .reserva-horizontal input[type="number"] {
   padding: 8px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--grisMedio);
   min-width: 120px;
   font-size: 14px;
 }
 
 .reserva-horizontal button {
   padding: 10px 16px;
-  background: #0078D7;
-  color: white;
+  background: var(--dorado);
+  color: var(--negro);
   border: none;
   border-radius: 5px;
   font-weight: bold;
@@ -149,10 +159,10 @@ img {
 }
 
 .reserva-horizontal button:hover {
-  background: #005fa3;
+  background: var(--hover);
 }
 
-/* 📱 Responsive */
+/* Responsive */
 @media (max-width: 768px) {
   .reserva-horizontal form {
     flex-direction: column;
@@ -166,18 +176,18 @@ img {
   }
 }
 
-
+/* Entradas */
 .entrada {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 16px;
-  flex-wrap: nowrap; /* evita que se apilen */
+  flex-wrap: nowrap;
   padding: 10px;
 }
 
 .entrada_imagen {
-  flex: 0 0 auto; /* evita que se expandan */
+  flex: 0 0 auto;
 }
 
 .entrada_imagen img {
@@ -193,7 +203,7 @@ img {
   transform: scale(1.05);
 }
 
-/* 📱 Responsive para pantallas pequeñas */
+/* Responsive entradas */
 @media (max-width: 768px) {
   .entrada {
     flex-direction: column;
@@ -206,23 +216,46 @@ img {
   }
 }
 
-
+/* Observaciones */
 #observaciones {
   padding: 8px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--grisMedio);
   font-size: 14px;
   margin-top: 10px;
-}
-
-#observaciones {
   resize: vertical;
   min-height: 60px;
+  background-color: var(--grisClaro);
+  color: var(--negro);
 }
-.footer, .barra {
-  background-color: var(--dorado);
-height: 10rem;
- align-items: center;
-   width: 100%;
 
+/* Planes */
+.planes-grid {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.plan-card {
+  width: 50rem;
+  height: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 12px var(--sombra);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  background-color: var(--grisClaro);
+}
+
+.plan-card:hover {
+  transform: scale(1.1);
+}
+
+.plan-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
 }
