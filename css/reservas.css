@@ -1,0 +1,74 @@
+.barra-reserva {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 1000px;
+  margin: auto;
+}
+
+.barra-reserva label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.barra-reserva .grupo,
+.barra-reserva .fecha,
+.barra-reserva .hora,
+.barra-reserva .piso,
+.barra-reserva .mesa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contador {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.contador button {
+  padding: 5px 10px;
+  font-size: 16px;
+  background-color: #eee;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#cantidad {
+  font-size: 16px;
+  font-weight: bold;
+  width: 30px;
+  text-align: center;
+}
+
+.barra-reserva input,
+.barra-reserva select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.buscar {
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buscar:hover {
+  background-color: #005fa3;
+}

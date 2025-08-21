@@ -4,25 +4,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zagrada Restaurante</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Zagrada Restautante y Café</title>
+    <link rel="stylesheet" href="../css/vendor/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
+
     <header class="header">
-        <input type="checkbox" class="header__checkbox" id="opne-menu">
-        <label for="opne-menu" class="header__open-nav-button" role="button">=</label>
-        <div class="header__logo-container">
-            <img class="header__logo" src="logo-azul-blanco.png" alt="Logo Zagrada Restaurante">
+
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="index.html">
+                    <h1 class="logo__nombre">Zagrada Restaurante <span class="logo__bold">y Café</span></h1>
+                </a>
+
+
+                <nav class="navegacion">
+                    <a href="nosotros.html" class="navegacion__enlace">Nosotros</a>
+                    <a href="menu.html" class="navegacion__enlace">Menú</a>
+                    <a href="reservas.html" class="navegacion__enlace">Reservas</a>
+
+                </nav>
+            </div>
         </div>
-        <nav class="header__nav">
-            <ul class="header__nav-list">
-                <li class="header__nav-item"><a href="#">Menú</a></li>
-                <li class="header__nav-item"><a href="#">Reservas</a></li>
-                <li class="header__nav-item"><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
+
+
+        <div class="header__texto">
+            <h2>La comida es Zagrada</h2>
+        </div>
     </header>
+
+    <div id="seccion-reservas">
+
+        <div class="reserva-horizontal">
+            <h2>Reservar Mesa</h2>
+            <form>
+
+                <input type="date" id="fecha">
+
+                <select id="hora">
+                    <!-- Las opciones se generan con JS -->
+                </select>
+
+                <select id="ubicacion" onchange="actualizarMesas()">
+                    <option value="salon">Salón</option>
+                    <option value="terraza">Terraza</option>
+                </select>
+
+
+                <select id="mesa"></select>
+
+                <input type="number" id="personas" min="1" max="20" placeholder="Personas">
+
+                <select id="decoracion">
+                    <option value="plata">Plata</option>
+                    <option value="oro">Oro</option>
+                    <option value="diamante">Diamante</option>
+                </select>
+                <textarea id="observaciones" placeholder="Observaciones (opcional)"></textarea>
+
+                <button type="submit">Reservar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="contenedor planes-decoracion">
+        <main class="blog">
+            <h3>Planes de Decoracion</h3>
+
+            <article class="entrada">
+                <div class="entrada__imagen">
+                    <img src="../img/planplata.jpg" alt="imagen planes">
+                </div>
+                <div class="entrada__imagen">
+                    <img src="../img/planoro.jpg" alt="imagen planes">
+                </div>
+                <div class="entrada__imagen">
+                    <img src="../img/plandiamante.jpg" alt="imagen planes">
+                </div>
+
+
+            </article>
+
+        </main>
+
+    </div>
+
+
+
+    <script src="../js/reservas.js"></script>
 </body>
+
+
+<footer class="footer">
+    <div class="contenedor">
+        <div class="barra">
+            <a class="logo" href="index.html">
+                <h1 class="logo__nombre">Zagrada Restaurante <span class="logo__bold">y Café</span></h1>
+            </a>
+
+
+            <nav class="navegacion">
+                <a href="nosotros.html" class="navegacion__enlace">Nosotros</a>
+                <a href="menu.html" class="navegacion__enlace">Menú</a>
+                <a href="reservas.html" class="navegacion__enlace">Reservas</a>
+
+            </nav>
+        </div>
+
+    </div>
+</footer>
 
 </html>
