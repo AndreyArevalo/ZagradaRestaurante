@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zagrada Restaurante y Café</title>
+  <script src="/js/vendor/sweetalert2.js"></script>
+  <script src="/js/reservas.js"></script>
   <link rel="stylesheet" href="../css/vendor/normalize.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=PT+Sans:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=PT+Sans:wght@700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
 
   <header class="header">
@@ -30,9 +35,9 @@
     </div>
   </header>
 
-<hr class="separador"> 
+  <hr class="separador">
 
-<div id="seccion-reservas">     <!--   Reservas  -->
+  <div id="seccion-reservas"> <!--   Reservas  -->
     <div class="reserva-horizontal">
       <h2>Reservar Mesa</h2>
       <form>
@@ -45,6 +50,8 @@
         <select id="mesa"></select>
         <input type="number" id="personas" min="1" max="20" placeholder="Personas">
         <select id="decoracion">
+          <option value="" disabled selected>Planes de Decoración</option>
+          <option value="plata">Ninguno</option>
           <option value="plata">Plata</option>
           <option value="oro">Oro</option>
           <option value="diamante">Diamante</option>
@@ -55,72 +62,75 @@
     </div>
   </div>
 
-<hr class="separador"> 
+  <hr class="separador">
 
   <!-- Planes decoracion -->
   <div class="contenedor planes-decoracion">
-<section class="planes-decoracion contenedor">
-  <h3 class="centrar-texto">Planes de Decoración</h3>
-  <div class="planes-grid">
-    <div class="plan-card">
-      <img src="../img/planplata.jpg" alt="Plan Plata">
-    </div>
-    <div class="plan-card">
-      <img src="../img/planoro.jpg" alt="Plan Oro">
-    </div>
-    <div class="plan-card">
-      <img src="../img/plandiamante.jpg" alt="Plan Diamante">
-    </div>
-  </div>
-</section>
-  </div>
-
-<hr class="separador">  <!--  SEPARADOR  -->
-
-<section class="galeria-zagrada">
-  <h2 class="centrar-texto">Conoce Zagrada</h2>
-
-  <!-- Sección Salón -->
-  <div class="subseccion">
-    <h3>Salón Principal</h3>
-    <div class="galeria-grid">
-      <img src="/img/salon1.jpg" alt="Vista del salón principal">
-      <img src="/img/salon2.jpg" alt="Decoración del salón">
-      <video src="video/salon.mp4" controls></video>
-    </div>
-  </div>
-
-  <!-- Sección Terraza -->
-  <div class="subseccion">
-    <h3>Terraza</h3>
-    <div class="galeria-grid">
-      <img src="/img/terraza1.jpg" alt="Vista de la terraza">
-      <img src="/img/terraza2.avif" alt="Ambiente exterior">
-      <video src="video/terraza.mp4" controls></video>
-    </div>
-  </div>
-</section>
-
-<hr class="separador"> 
-
-<section class="sobre-nosotros" id="nosotros">
-  <div class="contenedor">
-    <div class="sobre-nosotros__grid">
-      <div class="sobre-nosotros__contenido">
-        <h2>Sobre Nosotros</h2>
-        <p>En Zagrada Restaurante y Café, creemos que la comida es sagrada. Cada plato que servimos está preparado con ingredientes frescos y locales, siguiendo recetas tradicionales que han pasado de generación en generación.</p>
-        <p>Nuestro compromiso es ofrecerte una experiencia gastronómica única, donde cada bocado te conecte con los sabores auténticos de nuestra tierra. Ven y descubre por qué la comida es Zagrada.</p>
+    <section class="planes-decoracion contenedor">
+      <h3 class="centrar-texto">Planes de Decoración</h3>
+      <div class="planes-grid">
+        <div class="plan-card">
+          <img src="../img/planplata.jpg" alt="Plan Plata">
+        </div>
+        <div class="plan-card">
+          <img src="../img/planoro.jpg" alt="Plan Oro">
+        </div>
+        <div class="plan-card">
+          <img src="../img/plandiamante.jpg" alt="Plan Diamante">
+        </div>
       </div>
-      <div class="sobre-nosotros__imagen">
-        <img src="/img/nosotros.jpg" alt="Interior del restaurante Zagrada">
+    </section>
+  </div>
+
+  <hr class="separador"> <!--  SEPARADOR  -->
+
+  <section class="galeria-zagrada">
+    <h2 class="centrar-texto">Conoce Zagrada</h2>
+
+    <!-- Sección Salón -->
+    <div class="subseccion">
+      <h3>Salón Principal</h3>
+      <div class="galeria-grid">
+        <img src="/img/salon1.jpg" alt="Vista del salón principal">
+        <img src="/img/salon2.jpg" alt="Decoración del salón">
+        <video src="video/salon.mp4" controls></video>
       </div>
     </div>
-  </div>
-</section>
+
+    <!-- Sección Terraza -->
+    <div class="subseccion">
+      <h3>Terraza</h3>
+      <div class="galeria-grid">
+        <img src="/img/terraza1.jpg" alt="Vista de la terraza">
+        <img src="/img/terraza2.avif" alt="Ambiente exterior">
+        <video src="video/terraza.mp4" controls></video>
+      </div>
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <section class="sobre-nosotros" id="nosotros">
+    <div class="contenedor">
+      <div class="sobre-nosotros__grid">
+        <div class="sobre-nosotros__contenido">
+          <h2>Sobre Nosotros</h2>
+          <p>En Zagrada Restaurante y Café, creemos que la comida es sagrada. Cada plato que servimos está preparado con
+            ingredientes frescos y locales, siguiendo recetas tradicionales que han pasado de generación en generación.
+          </p>
+          <p>Nuestro compromiso es ofrecerte una experiencia gastronómica única, donde cada bocado te conecte con los
+            sabores auténticos de nuestra tierra. Ven y descubre por qué la comida es Zagrada.</p>
+        </div>
+        <div class="sobre-nosotros__imagen">
+          <img src="/img/nosotros.jpg" alt="Interior del restaurante Zagrada">
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
-<hr class="separador"> 
+  <hr class="separador">
 
   <footer class="footer">
     <div class="contenedor">
@@ -139,4 +149,5 @@
 
   <script src="../js/reservas.js"></script>
 </body>
+
 </html>
