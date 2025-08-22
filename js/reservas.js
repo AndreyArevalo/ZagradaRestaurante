@@ -83,8 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function validarLunes() {
     const fechaSeleccionada = new Date(fechaInput.value + 'T00:00:00');
     if (fechaSeleccionada.getDay() === 1) {
-      fechaInput.value = '';
-      horaSelect.innerHTML = '';
+     
 Swal.fire({
   title: '¡Reserva no disponible!',
   text: 'No trabajamos los lunes. Por favor selecciona otro día.',
@@ -93,7 +92,7 @@ Swal.fire({
   confirmButtonColor: '#8B0000', // Rojo vino elegante
   background: '#fff8f0', // Fondo cálido
   color: '#333',
-  imageUrl: '../img/logozagrada.jpg', // Ruta local del logo
+  imageUrl: '/img/logozagrada.jpg', // Ruta local del logo
   imageWidth: 80,
   imageHeight: 80,
   imageAlt: 'Logo Zagrada',
@@ -101,6 +100,9 @@ Swal.fire({
     popup: 'zagrada-popup',
     confirmButton: 'zagrada-btn'
   }
+}).then(() => {
+  fechaInput.value = '';
+  horaSelect.innerHTML = '';
 });
 
     } else {
@@ -109,7 +111,7 @@ Swal.fire({
   }
 
   // Eventos
-  fechaInput.addEventListener('input', validarLunes);
+  fechaInput.addEventListener('change', validarLunes);
   ubicacionSelect.addEventListener('change', actualizarMesas);
 
   // Inicializar
@@ -155,7 +157,7 @@ Swal.fire({
   cancelButtonColor: '#999',
   background: '#fff8f0', // Fondo cálido
   color: '#333',
-  imageUrl: '../img/logozagrada.jpg', // Logo del restaurante
+  imageUrl: '/img/logozagrada.jpg', // Logo del restaurante
   imageWidth: 80,
   imageHeight: 80,
   imageAlt: 'Logo Zagrada',

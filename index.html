@@ -41,8 +41,9 @@
     <div class="reserva-horizontal">
       <h2>Reservar Mesa</h2>
       <form>
-        <input type="date" id="fecha">
-        <select id="hora"></select>
+        <input type="date" id="fecha" name="fecha" required placeholder="Fecha">
+        <select id="hora"> <option value="" disabled selected>Seleccionar hora</option>
+</select>
         <select id="ubicacion" onchange="actualizarMesas()">
           <option value="salon">Salón</option>
           <option value="terraza">Terraza</option>
