@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zagrada Restaurante y Café</title>
+  <link rel="prefetch" href="/html/menu.html" as="document">
   <script src="/js/vendor/sweetalert2.js"></script>
   <script src="/js/reservas.js"></script>
   <link rel="stylesheet" href="../css/vendor/normalize.css">
@@ -42,8 +43,9 @@
       <h2>Reservar Mesa</h2>
       <form>
         <input type="date" id="fecha" name="fecha" required placeholder="Fecha">
-        <select id="hora"> <option value="" disabled selected>Seleccionar hora</option>
-</select>
+        <select id="hora">
+          <option value="" disabled selected>Seleccionar hora</option>
+        </select>
         <select id="ubicacion" onchange="actualizarMesas()">
           <option value="salon">Salón</option>
           <option value="terraza">Terraza</option>
@@ -71,13 +73,13 @@
       <h3 class="centrar-texto">Planes de Decoración</h3>
       <div class="planes-grid">
         <div class="plan-card">
-          <img src="../img/planplata.jpg" alt="Plan Plata">
+          <img loading="lazy" src="../img/planplata.jpg" alt="Plan Plata">
         </div>
         <div class="plan-card">
-          <img src="../img/planoro.jpg" alt="Plan Oro">
+          <img loading="lazy" src="../img/planoro.jpg" alt="Plan Oro">
         </div>
         <div class="plan-card">
-          <img src="../img/plandiamante.jpg" alt="Plan Diamante">
+          <img loading="lazy" src="../img/plandiamante.jpg" alt="Plan Diamante">
         </div>
       </div>
     </section>
@@ -92,9 +94,9 @@
     <div class="subseccion">
       <h3>Salón Principal</h3>
       <div class="galeria-grid">
-        <img src="/img/salon1.jpg" alt="Vista del salón principal">
-        <img src="/img/salon2.jpg" alt="Decoración del salón">
-        <video src="video/salon.mp4" controls></video>
+        <img loading="lazy" src="/img/salon1.jpg" alt="Vista del salón principal">
+        <img loading="lazy" src="/img/salon2.jpg" alt="Decoración del salón">
+        <video loading="lazy" src="video/salon.mp4" controls></video>
       </div>
     </div>
 
@@ -102,9 +104,9 @@
     <div class="subseccion">
       <h3>Terraza</h3>
       <div class="galeria-grid">
-        <img src="/img/terraza1.jpg" alt="Vista de la terraza">
-        <img src="/img/terraza2.avif" alt="Ambiente exterior">
-        <video src="video/terraza.mp4" controls></video>
+        <img loading="lazy" src="/img/terraza1.jpg" alt="Vista de la terraza">
+        <img loading="lazy" src="/img/terraza2.avif" alt="Ambiente exterior">
+        <video loading="lazy" src="video/terraza.mp4" controls></video>
       </div>
     </div>
   </section>
@@ -123,7 +125,7 @@
             sabores auténticos de nuestra tierra. Ven y descubre por qué la comida es Zagrada.</p>
         </div>
         <div class="sobre-nosotros__imagen">
-          <img src="/img/nosotros.jpg" alt="Interior del restaurante Zagrada">
+          <img loading="lazy" src="/img/nosotros.jpg" alt="Interior del restaurante Zagrada">
         </div>
       </div>
     </div>
@@ -136,7 +138,7 @@
   <footer class="footer">
     <div class="contenedor">
       <div class="barra">
-        <a class="logo" href="index.html">
+        <a class="logo" href="index.html" id="logo-footer">
           <h1 class="logo__nombre">Zagrada Restaurante <span class="logo__bold">y Café</span></h1>
         </a>
         <nav class="navegacion">
@@ -149,6 +151,17 @@
   </footer>
 
   <script src="../js/reservas.js"></script>
+  <script>
+  const logo = document.getElementById('logo-footer');
+
+  logo.addEventListener('click', function(e) {
+    const isIndex = window.location.pathname.endsWith('index.html') || window.location.pathname === '/';
+    if (isIndex) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+</script>
 </body>
 
 </html>

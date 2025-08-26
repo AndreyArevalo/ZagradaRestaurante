@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,12 @@
   <link rel="stylesheet" href="../css/vendor/normalize.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=PT+Sans:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=PT+Sans:wght@700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/menu.css">
 </head>
+
 <body>
 
   <header class="header">
@@ -31,61 +34,76 @@
     </div>
   </header>
 
-    <main class="contenedor seccion-menu">
-        <h3 class="centrar-texto">Menú Principal</h3>
+  <main class="contenedor seccion-menu">
+    <h3 class="centrar-texto">Menú Principal</h3>
 
-        <div class="menu-grid">
-
-
-
-            <div class="menu-item">
-                <img src="/img/Rissoto_3.webp" alt="Lasaña Artesanal" onclick="openModal(this)">
-                <h3>Montenegro</h3>
-                <p>Arroz cremoso con camarones y pulpo salteado en chimichurri de la casa.</p>
-                <span>$18,000</span>
-            </div>
-            <div class="menu-item">
-                <img src="/img/Rissoto_3.webp" alt="Lasaña Artesanal" onclick="openModal(this)">
-                <h3>Montenegro</h3>
-                <p>Arroz cremoso con camarones y pulpo salteado en chimichurri de la casa.</p>
-                <span>$18,000</span>
-            </div>
-            <div class="menu-item">
-                <img src="/img/Rissoto_3.webp" alt="Lasaña Artesanal" onclick="openModal(this)">
-                <h3>Montenegro</h3>
-                <p>Arroz cremoso con camarones y pulpo salteado en chimichurri de la casa.</p>
-                <span>$18,000</span>
-            </div>
-            <div class="menu-item">
-                <img src="/img/Rissoto_3.webp" alt="Lasaña Artesanal" onclick="openModal(this)">
-                <h3>Montenegro</h3>
-                <p>Arroz cremoso con camarones y pulpo salteado en chimichurri de la casa.</p>
-                <span>$18,000</span>
-            </div>
-            <div class="menu-item">
-                <img src="/img/Rissoto_3.webp" alt="Lasaña Artesanal" onclick="openModal(this)">
-                <h3>Montenegro</h3>
-                <p>Arroz cremoso con camarones y pulpo salteado en chimichurri de la casa.</p>
-                <span>$18,000</span>
-            </div>
+    <div class="menu-grid">
 
 
 
-            <!-- Repite para los demás platos -->
-        </div>
+      <div class="menu-item">
+        <picture>
+          <source srcset="/img/Risoto_3webp" type="image.webp">
+          <img loading="lazy" src="/img/Rissoto_3.webp" alt="Lasaña Artesanal" onclick="openModal(this)">
+        </picture>
+        <h3>Montenegro</h3>
+        <p>Arroz cremoso con camarones y pulpo salteado en chimichurri de la casa.</p>
+        <span>$18,000</span>
+      </div>
+      <div class="menu-item">
+        <picture>
+          <source srcset="/img/Risoto_3webp" type="image.webp">
+          <img loading="lazy" src="/img/Rissoto_3.webp" alt="Lasaña Artesanal" onclick="openModal(this)">
+        </picture>
+        <h3>Montenegro</h3>
+        <p>Arroz cremoso con camarones y pulpo salteado en chimichurri de la casa.</p>
+        <span>$18,000</span>
+      </div>
+      <div class="menu-item">
+        <picture>
+          <source srcset="/img/Risoto_3webp" type="image.webp">
+          <img loading="lazy" src="/img/Rissoto_3.webp" alt="Lasaña Artesanal" onclick="openModal(this)">
+        </picture>
+        <h3>Montenegro</h3>
+        <p>Arroz cremoso con camarones y pulpo salteado en chimichurri de la casa.</p>
+        <span>$18,000</span>
+      </div>
+      <div class="menu-item">
+        <picture>
+          <source srcset="/img/Risoto_3webp" type="image.webp">
+          <img loading="lazy" src="/img/Rissoto_3.webp" alt="Lasaña Artesanal" onclick="openModal(this)">
+        </picture>
+        <h3>Montenegro</h3>
+        <p>Arroz cremoso con camarones y pulpo salteado en chimichurri de la casa.</p>
+        <span>$18,000</span>
+      </div>
+      <div class="menu-item">
+        <picture>
+          <source srcset="/img/Risoto_3webp" type="image.webp">
+          <img loading="lazy" src="/img/Rissoto_3.webp" alt="Lasaña Artesanal" onclick="openModal(this)">
+        </picture>
+        <h3>Montenegro</h3>
+        <p>Arroz cremoso con camarones y pulpo salteado en chimichurri de la casa.</p>
+        <span>$18,000</span>
+      </div>
 
-        <!-- Modal para ampliar imagen -->
-        <div id="imgModal" class="modal" onclick="closeModal()">
-            <img id="modalImg" class="modal-content">
-        </div>
-
-        <!-- Agrega más platos aquí -->
-        </div>
 
 
-    </main>
+      <!-- Repite para los demás platos -->
+    </div>
 
-  <hr class="separador"> 
+    <!-- Modal para ampliar imagen -->
+    <div id="imgModal" class="modal" onclick="closeModal()">
+      <img id="modalImg" class="modal-content">
+    </div>
+
+    <!-- Agrega más platos aquí -->
+    </div>
+
+
+  </main>
+
+  <hr class="separador">
 
   <footer class="footer">
     <div class="contenedor">
@@ -102,7 +120,7 @@
     </div>
   </footer>
 
-    <script src="/js/menu.js"></script>
+  <script src="/js/menu.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,7 @@
 :root {
-  --fuenteHeading: 'PT Sans', sans-serif;
-  --fuenteParrafos: 'Open Sans', sans-serif;
+  --fuenteHeading: 'Cinzel', serif;
+  --fuenteParrafos: 'Libre Baskerville', serif;
+
 
   --azulOscuro: #0c1b2a;
   --dorado: #c9c902;
@@ -82,17 +83,22 @@ img {
 .header__texto {
   text-align: center;
   color: var(--blanco);
-  margin-top: 5rem;
+  margin-top: 13rem;
   font-size: 4rem;
+}
+@media (max-width: 768px) {
+    .header__texto {
+      margin-top: 5rem;
+    }
 }
 
 .barra {
-  background: rgba(0, 0, 0, 0.445);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.375);
+  background: rgb(255, 255, 255);
+  /* box-shadow: 0 4px 20px rgba(255, 255, 255, 0.375); */
   /* margin-top: 1rem; */
     width: 100vw;
   margin-left: calc(-50vw + 50%);
-  padding: 1rem 2rem;
+  padding: 0.1rem 5rem;
 }
 
 @media (min-width: 768px) {
