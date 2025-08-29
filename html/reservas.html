@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zagrada Restaurante y Café</title>
+  <link rel="stylesheet" href="../css/vendor/normalize.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="/js/reservas.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=PT+Sans:wght@700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+ <header class="header">
+    <section class="barra">
+
+      <!-- Barra superior fija -->
+      <div class="topbar">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="topbar-right">
+          <a href="html/reservas.html" class="btn-reservar-top">RESERVAR</a>
+        </div>
+
+
+        <!-- Menú lateral oculto -->
+        <div id="sideMenu" class="side-menu">
+          <div class="menu-header"></div>
+          <ul class="menu-links">
+            <li><a href="/index.html">INICIO</a></li>
+            <li><a href="/html/menu.html">MENÚ</a></li>
+            <li><a href="/html/bebidas.html">BEBIDAS</a></li>
+            <li><a href="#EVENTOS">EVENTOS</a></li>
+            <li><a href="/html/reservas.html" class="btn-reservar">RESERVAR AHORA</a></li>
+          </ul>
+
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/573156191389" target="_blank" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+
+
+        </div>
+      </div>
+      <!-- Branding central -->
+
+    </section>
+    <section class="nombre">
+      <div class="header__texto">
+        <h2>RESERVAS</h2>
+      </div>
+    </section>
+
+
+    
+  </header>
+
+  <main class="contenedor">
+  
+      <hr class="separador">
+
+  <div id="seccion-reservas"> <!--   Reservas  -->
+    <div class="reserva-horizontal">
+      <h2>Reservar Mesa</h2>
+      <form>
+        <input type="date" id="fecha" name="fecha" required placeholder="Fecha">
+        <select id="hora">
+          <option value="" disabled selected>Seleccionar hora</option>
+        </select>
+        <select id="ubicacion" onchange="actualizarMesas()">
+          <option value="salon">Salón</option>
+          <option value="terraza">Terraza</option>
+        </select>
+        <select id="mesa"></select>
+        <input type="number" id="personas" min="1" max="20" placeholder="Personas">
+        <select id="decoracion">
+          <option value="" disabled selected>Planes de Decoración</option>
+          <option value="plata">Ninguno</option>
+          <option value="plata">Plata</option>
+          <option value="oro">Oro</option>
+          <option value="diamante">Diamante</option>
+        </select>
+        <textarea id="observaciones" placeholder="Observaciones (opcional)"></textarea>
+        <button type="submit">Reservar</button>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  </main>
+
+  <hr class="separador">
+
+  <footer class="footer">
+    <div class="contenedor">
+      <div class="barra">
+        <a class="logo" href="/index.html">
+          <h1 class="logo__nombre">Zagrada Restaurante <span class="logo__bold">y Café</span></h1>
+        </a>
+        <nav class="navegacion">
+          <a href="/index.html#nosotros" class="navegacion__enlace">Nosotros</a>
+          <a href="/html/menu.html" class="navegacion__enlace">Menú</a>
+          <a href="/html/bebidas.html" class="navegacion__enlace">Bebidas</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/menu.js"></script>
+    <script>
+    function toggleMenu() {
+      document.getElementById('sideMenu').classList.toggle('active');
+    }
+  </script>
+</body>
+
+</html>

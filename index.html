@@ -14,56 +14,59 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=PT+Sans:wght@700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
   <header class="header">
-    <div class="contenedor">
-      <div class="barra">
-        <a class="logo" href="index.html">
-          <h1 class="logo__nombre">Zagrada Restaurante <span class="logo__bold">y Café</span></h1>
-        </a>
-        <nav class="navegacion">
-          <a href="#nosotros" class="navegacion__enlace">Nosotros</a>
-          <a href="/html/menu.html" class="navegacion__enlace">Menú</a>
-          <a href="/html/bebidas.html" class="navegacion__enlace">Bebidas</a>
-        </nav>
+    <section class="barra">
+
+      <!-- Barra superior fija -->
+      <div class="topbar">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="topbar-right">
+          <a href="html/reservas.html" class="btn-reservar-top">RESERVAR</a>
+        </div>
+
+
+        <!-- Menú lateral oculto -->
+        <div id="sideMenu" class="side-menu">
+          <div class="menu-header"></div>
+          <ul class="menu-links">
+            <li><a href="/index.html">INICIO</a></li>
+            <li><a href="/html/menu.html">MENÚ</a></li>
+            <li><a href="/html/bebidas.html">BEBIDAS</a></li>
+            <li><a href="#EVENTOS">EVENTOS</a></li>
+            <li><a href="/html/reservas.html" class="btn-reservar">RESERVAR AHORA</a></li>
+          </ul>
+
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/573156191389" target="_blank" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+
+
+        </div>
       </div>
-    </div>
-    <div class="header__texto">
-      <h2>La comida es Zagrada</h2>
-    </div>
+      <!-- Branding central -->
+
+    </section>
+    <section class="nombre">
+      <div class="header__texto">
+        <h2>Zagrada Restaurante y Café</h2>
+      </div>
+    </section>
   </header>
 
-  <hr class="separador">
 
-  <div id="seccion-reservas"> <!--   Reservas  -->
-    <div class="reserva-horizontal">
-      <h2>Reservar Mesa</h2>
-      <form>
-        <input type="date" id="fecha" name="fecha" required placeholder="Fecha">
-        <select id="hora">
-          <option value="" disabled selected>Seleccionar hora</option>
-        </select>
-        <select id="ubicacion" onchange="actualizarMesas()">
-          <option value="salon">Salón</option>
-          <option value="terraza">Terraza</option>
-        </select>
-        <select id="mesa"></select>
-        <input type="number" id="personas" min="1" max="20" placeholder="Personas">
-        <select id="decoracion">
-          <option value="" disabled selected>Planes de Decoración</option>
-          <option value="plata">Ninguno</option>
-          <option value="plata">Plata</option>
-          <option value="oro">Oro</option>
-          <option value="diamante">Diamante</option>
-        </select>
-        <textarea id="observaciones" placeholder="Observaciones (opcional)"></textarea>
-        <button type="submit">Reservar</button>
-      </form>
-    </div>
-  </div>
 
   <hr class="separador">
 
@@ -96,7 +99,7 @@
       <div class="galeria-grid">
         <img loading="lazy" src="/img/salon1.jpg" alt="Vista del salón principal">
         <img loading="lazy" src="/img/salon2.jpg" alt="Decoración del salón">
-        <video loading="lazy" src="video/salon.mp4" controls></video>
+        <video loading="lazy" src="video/salon.mp4" controls width="400" height="300"></video>
       </div>
     </div>
 
@@ -106,7 +109,7 @@
       <div class="galeria-grid">
         <img loading="lazy" src="/img/terraza1.jpg" alt="Vista de la terraza">
         <img loading="lazy" src="/img/terraza2.avif" alt="Ambiente exterior">
-        <video loading="lazy" src="video/terraza.mp4" controls></video>
+        <video loading="lazy" src="video/terraza.mp4" controls width="400" height="300"></video>
       </div>
     </div>
   </section>
@@ -132,6 +135,23 @@
   </section>
 
 
+  <hr class="separador">
+
+  <section class="mapa-ubicacion contenedor">
+    <div>
+      <h2>Como llegar</h2>
+      <video loading="lazy" src="video/comollegar.mp4" controls width="400" height="300"></video>
+    </div>
+    <div>
+      <h2>Encuentranos aquí</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246.77763745621638!2d-73.35908904439104!3d8.258705712425346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e677b23e3cf5a09%3A0x5466435a78d78af4!2sZagrada%20Restaurante%20%26%20Caf%C3%A9!5e0!3m2!1ses!2sco!4v1756338384775!5m2!1ses!2sco"
+        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+
 
   <hr class="separador">
 
@@ -139,7 +159,7 @@
     <div class="contenedor">
       <div class="barra">
         <a class="logo" href="index.html" id="logo-footer">
-          <h1 class="logo__nombre">Zagrada Restaurante <span class="logo__bold">y Café</span></h1>
+          <h1 class="logo__nombre">Zagrada <span class="logo__bold">Restaurante y Café</span></h1>
         </a>
         <nav class="navegacion">
           <a href="#nosotros" class="navegacion__enlace">Nosotros</a>
@@ -152,16 +172,21 @@
 
   <script src="../js/reservas.js"></script>
   <script>
-  const logo = document.getElementById('logo-footer');
+    const logo = document.getElementById('logo-footer');
 
-  logo.addEventListener('click', function(e) {
-    const isIndex = window.location.pathname.endsWith('index.html') || window.location.pathname === '/';
-    if (isIndex) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    logo.addEventListener('click', function (e) {
+      const isIndex = window.location.pathname.endsWith('index.html') || window.location.pathname === '/';
+      if (isIndex) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  </script>
+  <script>
+    function toggleMenu() {
+      document.getElementById('sideMenu').classList.toggle('active');
     }
-  });
-</script>
+  </script>
 </body>
 
 </html>
