@@ -121,83 +121,59 @@ Swal.fire({
 
 
 // Boton Reserva 
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('btn-reservar').addEventListener('click', function () {
+    const fecha = document.getElementById('fecha').value;
+    const hora = document.getElementById('hora').value;
+    const ubicacion = document.getElementById('ubicacion').value;
+    const mesa = document.getElementById('mesa').value;
+    const personas = document.getElementById('personas').value;
+    const decoracion = document.getElementById('decoracion').value;
+    const observaciones = document.getElementById('observaciones').value;
+    const nombre = document.getElementById('nombre').value;
 
-document.querySelector('form').addEventListener('submit', function (e) {
-  e.preventDefault(); // Evita el envío tradicional
-
-  // Obtener datos del formulario
-  const fecha = document.getElementById('fecha').value;
-  const hora = document.getElementById('hora').value;
-  const ubicacion = document.getElementById('ubicacion').value;
-  const mesa = document.getElementById('mesa').value;
-  const personas = document.getElementById('personas').value;
-  const decoracion = document.getElementById('decoracion').value;
-  const observaciones = document.getElementById('observaciones').value;
-
-  // Validación básica
-  if (!fecha || !hora || !mesa || !personas) {
-    Swal.fire({
-      icon: 'error',
-      title: 'Faltan datos',
-      text: 'Por favor completa todos los campos antes de reservar.'
-    });
-    return;
-  }
-
-  // Solicitar nombre con SweetAlert
-Swal.fire({
-  title: '¿Quién hace la reserva?',
-  input: 'text',
-  inputLabel: 'Nombre completo',
-  inputPlaceholder: 'Ej: Ana Rodríguez',
-  showCancelButton: true,
-  confirmButtonText: 'Enviar por WhatsApp',
-  cancelButtonText: 'Cancelar',
-  confirmButtonColor: '#25D366', // Verde WhatsApp
-  cancelButtonColor: '#999',
-  background: '#fff8f0', // Fondo cálido
-  color: '#333',
-  imageUrl: '/img/logozagrada.jpg', // Logo del restaurante
-  imageWidth: 80,
-  imageHeight: 80,
-  imageAlt: 'Logo Zagrada',
-  customClass: {
-    popup: 'zagrada-popup',
-    confirmButton: 'zagrada-btn',
-    input: 'zagrada-input'
-  },
-  inputValidator: (value) => {
-    if (!value) return 'Por favor ingresa tu nombre';
-  }
-}).then((result) => {
-    if (result.isConfirmed) {
-      const nombre = result.value;
-
-      // Construir mensaje
-      let mensaje = `Hola, soy ${nombre}. Quiero reservar en Zagrada:\n`;
-      mensaje += `📅 Fecha: ${fecha}\n`;
-      mensaje += `⏰ Hora: ${hora}\n`;
-      mensaje += `📍 Ubicación: ${ubicacion}\n`;
-      mensaje += `🪑 Mesa: ${mesa}\n`;
-      mensaje += `👥 Personas: ${personas}\n`;
-
-      if (decoracion !== 'plata') {
-        mensaje += `🎀 Plan de decoración: ${decoracion}\n`;
-      }
-
-      if (observaciones.trim() !== '') {
-        mensaje += `📝 Observaciones: ${observaciones}`;
-      }
-
-      // Codificar mensaje para URL
-      const mensajeCodificado = encodeURIComponent(mensaje);
-
-      // Número de WhatsApp (ajústalo al tuyo)
-      const numero = '573156191389'; // ← cámbialo por el número real
-
-      // Abrir WhatsApp
-      window.open(`https://wa.me/${numero}?text=${mensajeCodificado}`, '_blank');
+    if (!fecha || !hora || !mesa || !personas || !nombre) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Faltan datos',
+        text: 'Por favor completa todos los campos antes de reservar.'
+      });
+      return;
     }
+
+    let mensaje = `Hola, soy ${nombre}. Quiero reservar en Zagrada:\n`;
+    mensaje += `📅 Fecha: ${fecha}\n`;
+    mensaje += `⏰ Hora: ${hora}\n`;
+    mensaje += `📍 Ubicación: ${ubicacion}\n`;
+    mensaje += `🪑 Mesa: ${mesa}\n`;
+    mensaje += `👥 Personas: ${personas}\n`;
+
+    if (decoracion !== 'plata') {
+      mensaje += `🎀 Plan de decoración: ${decoracion}\n`;
+    }
+
+    if (observaciones.trim() !== '') {
+      mensaje += `📝 Observaciones: ${observaciones}`;
+    }
+
+    const mensajeCodificado = encodeURIComponent(mensaje);
+    const numero = '573156191389';
+
+    // Abrir WhatsApp
+    location.href = `https://wa.me/${numero}?text=${mensajeCodificado}`;
   });
 });
 
+
+let flatpickrInstancia = null;
+
+function siguientePaso(id) {
+  document.querySelectorAll('.paso').forEach(p => p.classList.add('oculto'));
+  const pasoActual = document.getElementById(id);
+  pasoActual.classList.remove('oculto');
+}
+
+function anteriorPaso(id) {
+  document.querySelectorAll('.paso').forEach(p => p.classList.add('oculto'));
+  document.getElementById(id).classList.remove('oculto');
+}

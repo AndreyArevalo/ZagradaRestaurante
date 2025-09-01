@@ -7,18 +7,23 @@
   <title>Zagrada Restaurante y Café</title>
   <link rel="stylesheet" href="../css/vendor/normalize.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="/js/reservas.js"></script>
+  <script src="/js/reservas.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=PT+Sans:wght@700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/menu.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<!-- JS -->
+
 </head>
 
 <body>
 
- <header class="header">
+  <header class="header">
     <section class="barra">
 
       <!-- Barra superior fija -->
@@ -65,44 +70,106 @@
     </section>
 
 
-    
+
   </header>
 
-  <main class="contenedor">
-  
-      <hr class="separador">
+<form id="form-reserva">
 
-  <div id="seccion-reservas"> <!--   Reservas  -->
-    <div class="reserva-horizontal">
-      <h2>Reservar Mesa</h2>
-      <form>
-        <input type="date" id="fecha" name="fecha" required placeholder="Fecha">
-        <select id="hora">
+  <!-- Paso 1: Fecha -->
+  <div class="paso" id="paso-fecha">
+  <h2>Selecciona la fecha</h2>
+  <input type="date" id="fecha" name="fecha" required>
+  <div class="botones">
+      <button type="button">         </button>
+    <button type="button" onclick="siguientePaso('paso-hora')">Continuar</button>
+  </div>
+</div>
+
+
+  <!-- Paso 2: Hora (controlado por JS) -->
+  <div class="paso oculto" id="paso-hora">
+    <h2>Selecciona la hora</h2>
+    <div id="contenedor-horas">
+              <select id="hora">
           <option value="" disabled selected>Seleccionar hora</option>
         </select>
-        <select id="ubicacion" onchange="actualizarMesas()">
-          <option value="salon">Salón</option>
-          <option value="terraza">Terraza</option>
-        </select>
-        <select id="mesa"></select>
-        <input type="number" id="personas" min="1" max="20" placeholder="Personas">
-        <select id="decoracion">
-          <option value="" disabled selected>Planes de Decoración</option>
-          <option value="plata">Ninguno</option>
-          <option value="plata">Plata</option>
-          <option value="oro">Oro</option>
-          <option value="diamante">Diamante</option>
-        </select>
-        <textarea id="observaciones" placeholder="Observaciones (opcional)"></textarea>
-        <button type="submit">Reservar</button>
-      </form>
+    </div> <!-- Aquí tu JS inyecta los botones -->
+    <div class="botones">
+      <button type="button" onclick="anteriorPaso('paso-fecha')">Atrás</button>
+      <button type="button" onclick="siguientePaso('paso-ubicacion')">Continuar</button>
     </div>
   </div>
 
+  <!-- Paso 3: Ubicación -->
+  <div class="paso oculto" id="paso-ubicacion">
+    <h2>Selecciona la ubicación</h2>
+    <select id="ubicacion" onchange="actualizarMesas()" required>
+      <option value="salon">Salón</option>
+      <option value="terraza">Terraza</option>
+    </select>
+    <div class="botones">
+      <button type="button" onclick="anteriorPaso('paso-hora')">Atrás</button>
+      <button type="button" onclick="siguientePaso('paso-mesa')">Continuar</button>
+    </div>
+  </div>
 
+  <!-- Paso 4: Mesa -->
+  <div class="paso oculto" id="paso-mesa">
+    <h2>Selecciona la mesa</h2>
+    <select id="mesa" required></select>
+    <div class="botones">
+      <button type="button" onclick="anteriorPaso('paso-ubicacion')">Atrás</button>
+      <button type="button" onclick="siguientePaso('paso-personas')">Continuar</button>
+    </div>
+  </div>
 
+  <!-- Paso 5: Personas -->
+  <div class="paso oculto" id="paso-personas">
+    <h2>¿Cuántas personas?</h2>
+    <input type="number" id="personas" min="1" max="20" required>
+    <div class="botones">
+      <button type="button" onclick="anteriorPaso('paso-mesa')">Atrás</button>
+      <button type="button" onclick="siguientePaso('paso-decoracion')">Continuar</button>
+    </div>
+  </div>
 
-  </main>
+  <!-- Paso 6: Decoración -->
+  <div class="paso oculto" id="paso-decoracion">
+    <h2>Plan de decoración</h2>
+    <select id="decoracion" required>
+      <option value="" disabled selected>Seleccionar</option>
+      <option value="plata">Ninguno</option>
+      <option value="plata">Plata</option>
+      <option value="oro">Oro</option>
+      <option value="diamante">Diamante</option>
+    </select>
+    <div class="botones">
+      <button type="button" onclick="anteriorPaso('paso-personas')">Atrás</button>
+      <button type="button" onclick="siguientePaso('paso-observaciones')">Continuar</button>
+    </div>
+  </div>
+
+  <!-- Paso 7: Observaciones -->
+  <div class="paso oculto" id="paso-observaciones">
+    <h2>Observaciones</h2>
+    <textarea id="observaciones" placeholder="Opcional"></textarea>
+    <div class="botones">
+      <button type="button" onclick="anteriorPaso('paso-decoracion')">Atrás</button>
+     <button type="button" onclick="siguientePaso('paso-nombre')">Continuar</button>
+    </div>
+  </div>
+
+  <!-- Paso 8: Nombre -->
+<div class="paso oculto" id="paso-nombre">
+  <h2>¿Quién hace la reserva?</h2>
+  <input type="text" id="nombre" placeholder="Ej: Ana Rodríguez" required>
+  <div class="botones">
+    <button type="button" onclick="anteriorPaso('paso-decoracion')">Atrás</button>
+     <button type="button" id="btn-reservar">Reservar</button>
+  </div>
+</div>
+
+</form>
 
   <hr class="separador">
 
@@ -122,11 +189,12 @@
   </footer>
 
   <script src="/js/menu.js"></script>
-    <script>
+  <script>
     function toggleMenu() {
       document.getElementById('sideMenu').classList.toggle('active');
     }
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
 
 </html>

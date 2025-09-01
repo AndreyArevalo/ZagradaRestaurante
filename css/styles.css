@@ -257,76 +257,53 @@ img {
 }
 
 /* reservas */
-.reserva-horizontal {
-  max-width: 100%;
-    padding: 2rem;
-  background: var(--grisMedio);
-  border-radius: 10px;
-  box-shadow: 0 0 8px var(--sombra);
-  font-family: 'Segoe UI', sans-serif;
+.paso {
+  display: none;
+  flex-direction: column;
+  gap: 2em;
+  padding: 3em;
+  max-width: 600px;
+  margin: auto;
   text-align: center;
-  color: var(--blanco);
-
-
 }
 
-.reserva-horizontal h2 {
-  margin-bottom: 15px;
-  font-size: 25px;
-  color: var(--negro);
-    text-shadow:
-    -1px -1px 0 rgb(255, 255, 255),
-     1px -1px 0 rgb(255, 255, 255),
-    -1px  1px 0 rgb(255, 255, 255),
-     1px  1px 0 rgb(255, 255, 255);
-
+.paso h2 {
+  font-size: 2rem;
+  color: #3E2C1C;
 }
 
-.reserva-horizontal form {
+.paso input,
+.paso select,
+.paso textarea {
+  font-size: 1.4rem;
+  padding: 1em;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.botones {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
 }
 
-
-.reserva-horizontal select,
-.reserva-horizontal input[type="date"],
-.reserva-horizontal input[type="number"] {
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid var(--grisMedio);
-  min-width: 120px;
-  font-size: 14px;
-}
-
-.reserva-horizontal button {
-  padding: 10px 16px;
-  background: var(--azulMedio);
-  color: var(--blanco);
+.botones button {
+  background-color: #C19A6B;
+  color: white;
   border: none;
-  border-radius: 5px;
-  font-weight: bold;
+  padding: 1em 2em;
+  font-size: 1.2rem;
+  border-radius: 8px;
   cursor: pointer;
 }
 
-.reserva-horizontal button:hover {
-  background: var(--hover);
+.botones button:hover {
+  background-color: #a67c52;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .reserva-horizontal form {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .reserva-horizontal select,
-  .reserva-horizontal input,
-  .reserva-horizontal button {
-    width: 100%;
-  }
+.paso:not(.oculto) {
+  display: flex;
 }
 
 

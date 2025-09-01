@@ -32,10 +32,10 @@
           <div class="menu-header"></div>
           <ul class="menu-links">
             <li><a href="/index.html">INICIO</a></li>
-            <li><a href="#miami">MENÚ</a></li>
-            <li><a href="#nueva-york">BEBIDAS</a></li>
-            <li><a href="#washington">EVENTOS</a></li>
-            <li><a href="html/reservas.html" class="btn-reservar">RESERVAR AHORA</a></li>
+            <li><a href="/html/menu.html">MENÚ</a></li>
+            <li><a href="/html/bebidas.html">BEBIDAS</a></li>
+            <li><a href="#EVENTOS">EVENTOS</a></li>
+            <li><a href="/html/reservas.html" class="btn-reservar">RESERVAR AHORA</a></li>
           </ul>
 
           <div class="social-icons">
@@ -63,75 +63,191 @@
     </section>
   </header>
 
-    <main class="contenedor seccion-menu">
-        <h3 class="centrar-texto">Menú Principal</h3>
+    <div class="menu-acordeon">
 
-        <div class="menu-grid">
+    <!-- Categoría: Res -->
+    <div class="categoria" onclick="toggleSeccion('res')">
+      <h2>Res</h2>
+    </div>
 
-
-
-            <div class="menu-item">
-              <picture>
-                <source srcset="/img/Risoto_3webp" type="image.webp">
-                <img loading="lazy" src="/img/Rissoto_3.webp" alt="Lasaña Artesanal" onclick="openModal(this)">
-              </picture>
-                <h3>MArgarita clasica y tradicional</h3>
-                <p>Arroz cremoso con camarones y pulpo salteado en chimichurri de la casa.</p>
-                <span>$18,000</span>
-            </div>
-            <div class="menu-item">
-              <picture>
-                <source srcset="/img/Risoto_3webp" type="image.webp">
-                <img loading="lazy" src="/img/Rissoto_3.webp" alt="Lasaña Artesanal" onclick="openModal(this)">
-              </picture>
-                <h3>Mojito</h3>
-                <p>Arroz cremoso con camarones y pulpo salteado en chimichurri de la casa.</p>
-                <span>$18,000</span>
-            </div>
-            <div class="menu-item">
-              <picture>
-                <source srcset="/img/Risoto_3webp" type="image.webp">
-                <img loading="lazy" src="/img/Rissoto_3.webp" alt="Lasaña Artesanal" onclick="openModal(this)">
-              </picture>
-                <h3>Montenegro</h3>
-                <p>Arroz cremoso con camarones y pulpo salteado en chimichurri de la casa.</p>
-                <span>$18,000</span>
-            </div>
-            <div class="menu-item">
-              <picture>
-                <source srcset="/img/Risoto_3webp" type="image.webp">
-                <img loading="lazy" src="/img/Rissoto_3.webp" alt="Lasaña Artesanal" onclick="openModal(this)">
-              </picture>
-                <h3>Montenegro</h3>
-                <p>Arroz cremoso con camarones y pulpo salteado en chimichurri de la casa.</p>
-                <span>$18,000</span>
-            </div>
-            <div class="menu-item">
-              <picture>
-                <source srcset="/img/Risoto_3webp" type="image.webp">
-                <img loading="lazy" src="/img/Rissoto_3.webp" alt="Lasaña Artesanal" onclick="openModal(this)">
-              </picture>
-                <h3>Montenegro</h3>
-                <p>Arroz cremoso con camarones y pulpo salteado en chimichurri de la casa.</p>
-                <span>$18,000</span>
-            </div>
-
-
-
-            <!-- Repite para los demás platos -->
+    <div class="seccion oculto" id="res">
+      <div class="plato">
+        <img src="/img/carne1.webp" alt="Carne Asada" onclick="ampliarImagen(this)">
+        <div class="info">
+          <h3>Carne Asada</h3>
+          <p>Carne de res asada</p>
+          <span>$18.000</span>
         </div>
+      </div>
 
-        <!-- Modal para ampliar imagen -->
-        <div id="imgModal" class="modal" onclick="closeModal()">
-            <img id="modalImg" class="modal-content">
+
+      <div class="plato">
+        <img src="/img/costilla2.webp" alt="Carne Asada" onclick="ampliarImagen(this)">
+        <div class="info">
+          <h3>Costilla bbq</h3>
+          <p>Carne de res asada</p>
+          <span>$18.000</span>
         </div>
+      </div>
 
-        <!-- Agrega más platos aquí -->
+      <div class="plato">
+        <img src="/img/carne-asada.jpg" alt="Carne Asada" onclick="ampliarImagen(this)">
+        <div class="info">
+          <h3>Carne Asada</h3>
+          <p>Carne de res asada</p>
+          <span>$18.000</span>
         </div>
+      </div>
+
+      <div class="plato">
+        <img src="/img/carne-asada.jpg" alt="Carne Asada" onclick="ampliarImagen(this)">
+        <div class="info">
+          <h3>Carne Asada</h3>
+          <p>Carne de res asada</p>
+          <span>$18.000</span>
+        </div>
+      </div>
+      <!-- Repite más platos aquí -->
+    </div>
 
 
-    </main>
+    <div class="categoria" onclick="toggleSeccion('pollo')">
+      <h2>Pollo</h2>
+    </div>
 
+    <div class="seccion oculto" id="pollo">
+      <div class="plato">
+        <img src="/img/carne1.webp" alt="Carne Asada" onclick="ampliarImagen(this)">
+        <div class="info">
+          <h3>Carne Asada</h3>
+          <p>Carne de res asada</p>
+          <span>$18.000</span>
+        </div>
+      </div>
+
+
+      <div class="plato">
+        <img src="/img/costilla2.webp" alt="Carne Asada" onclick="ampliarImagen(this)">
+        <div class="info">
+          <h3>Costilla bbq</h3>
+          <p>Carne de res asada</p>
+          <span>$18.000</span>
+        </div>
+      </div>
+
+      <div class="plato">
+        <img src="/img/carne-asada.jpg" alt="Carne Asada" onclick="ampliarImagen(this)">
+        <div class="info">
+          <h3>Carne Asada</h3>
+          <p>Carne de res asada</p>
+          <span>$18.000</span>
+        </div>
+      </div>
+
+      <div class="plato">
+        <img src="/img/carne-asada.jpg" alt="Carne Asada" onclick="ampliarImagen(this)">
+        <div class="info">
+          <h3>Carne Asada</h3>
+          <p>Carne de res asada</p>
+          <span>$18.000</span>
+        </div>
+      </div>
+      <!-- Repite más platos aquí -->
+    </div>
+
+    
+    <div class="categoria" onclick="toggleSeccion('cerdo')">
+      <h2>Cerdo</h2>
+    </div>
+
+    <div class="seccion oculto" id="cerdo">
+      <div class="plato">
+        <img src="/img/carne1.webp" alt="Carne Asada" onclick="ampliarImagen(this)">
+        <div class="info">
+          <h3>Cerdo</h3>
+          <p>Carne de res asada</p>
+          <span>$18.000</span>
+        </div>
+      </div>
+
+
+      <div class="plato">
+        <img src="/img/costilla2.webp" alt="Carne Asada" onclick="ampliarImagen(this)">
+        <div class="info">
+          <h3>Costilla bbq</h3>
+          <p>Carne de res asada</p>
+          <span>$18.000</span>
+        </div>
+      </div>
+
+      <div class="plato">
+        <img src="/img/carne-asada.jpg" alt="Carne Asada" onclick="ampliarImagen(this)">
+        <div class="info">
+          <h3>Carne Asada</h3>
+          <p>Carne de res asada</p>
+          <span>$18.000</span>
+        </div>
+      </div>
+
+      <div class="plato">
+        <img src="/img/carne-asada.jpg" alt="Carne Asada" onclick="ampliarImagen(this)">
+        <div class="info">
+          <h3>Carne Asada</h3>
+          <p>Carne de res asada</p>
+          <span>$18.000</span>
+        </div>
+      </div>
+      <!-- Repite más platos aquí -->
+    </div>
+    
+
+    <div class="categoria" onclick="toggleSeccion('de_mar')">
+      <h2>De Mar</h2>
+    </div>
+
+    <div class="seccion oculto" id="de_mar">
+      <div class="plato">
+        <img src="/img/carne1.webp" alt="Carne Asada" onclick="ampliarImagen(this)">
+        <div class="info">
+          <h3>Carne Asada</h3>
+          <p>Carne de res asada</p>
+          <span>$18.000</span>
+        </div>
+      </div>
+
+
+      <div class="plato">
+        <img src="/img/costilla2.webp" alt="Carne Asada" onclick="ampliarImagen(this)">
+        <div class="info">
+          <h3>Costilla bbq</h3>
+          <p>Carne de res asada</p>
+          <span>$18.000</span>
+        </div>
+      </div>
+
+      <div class="plato">
+        <img src="/img/carne-asada.jpg" alt="Carne Asada" onclick="ampliarImagen(this)">
+        <div class="info">
+          <h3>Carne Asada</h3>
+          <p>Carne de res asada</p>
+          <span>$18.000</span>
+        </div>
+      </div>
+
+      <div class="plato">
+        <img src="/img/carne-asada.jpg" alt="Carne Asada" onclick="ampliarImagen(this)">
+        <div class="info">
+          <h3>Carne Asada</h3>
+          <p>Carne de res asada</p>
+          <span>$18.000</span>
+        </div>
+      </div>
+      <!-- Repite más platos aquí -->
+    </div>
+
+    <!-- Repite para Pollo, Mar, Cardo, Pastas... -->
+
+  </div>
 <hr class="separador"> 
 
   <footer class="footer">
