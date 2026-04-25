@@ -4,197 +4,273 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zagrada Restaurante y Café</title>
+  <title>Reservas — Zagrada Restaurante y Café</title>
   <link rel="stylesheet" href="../css/vendor/normalize.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <script src="/js/reservas.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=PT+Sans:wght@700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../css/menu.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-
-<!-- JS -->
-
+  <script src="/js/vendor/sweetalert2.js"></script>
 </head>
 
 <body>
 
-  <header class="header">
+  <!-- ══ HEADER ════════════════════════════════════════ -->
+  <header class="reservas-hero">
     <section class="barra">
-
-      <!-- Barra superior fija -->
       <div class="topbar">
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
         <div class="topbar-right">
-          <a href="html/reservas.html" class="btn-reservar-top">RESERVAR</a>
+          <a href="/html/reservas.html" class="btn-reservar-top">
+            <i class="far fa-calendar-alt"></i> RESERVAR
+          </a>
         </div>
 
-
-        <!-- Menú lateral oculto -->
         <div id="sideMenu" class="side-menu">
           <div class="menu-header"></div>
           <ul class="menu-links">
             <li><a href="/index.html">INICIO</a></li>
             <li><a href="/html/menu.html">MENÚ</a></li>
             <li><a href="/html/bebidas.html">BEBIDAS</a></li>
-            <li><a href="#EVENTOS">EVENTOS</a></li>
-            <li><a href="/html/reservas.html" class="btn-reservar">RESERVAR AHORA</a></li>
+            <li>
+              <a href="/html/reservas.html" class="btn-reservar">
+                <i class="far fa-calendar-alt"></i> RESERVAR AHORA
+              </a>
+            </li>
           </ul>
-
           <div class="social-icons">
-            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://wa.me/573156191389" target="_blank" aria-label="WhatsApp">
-              <i class="fab fa-whatsapp"></i>
-            </a>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/573156191389" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           </div>
-
-
         </div>
       </div>
-      <!-- Branding central -->
-
     </section>
+
     <section class="nombre">
       <div class="header__texto">
-        <h2>RESERVAS</h2>
+        <div class="header__ornamento"></div>
+        <h2>RESERVA TU MESA</h2>
+        <div class="header__ornamento"></div>
       </div>
     </section>
-
-
-
   </header>
 
-<form id="form-reserva">
 
-  <!-- Paso 1: Fecha -->
-  <div class="paso" id="paso-fecha">
-  <h2>Selecciona la fecha</h2>
-  <input type="date" id="fecha" name="fecha" required>
-  <div class="botones">
-      <button type="button">         </button>
-    <button type="button" onclick="siguientePaso('paso-hora')">Continuar</button>
-  </div>
-</div>
+  <!-- ══ FORMULARIO ════════════════════════════════════ -->
+  <div class="reservas-section">
+    <div class="reservas-card">
 
+      <!-- Indicadores de paso -->
+      <div class="paso-indicador">
+        <div class="paso-dot activo" id="dot-1"></div>
+        <div class="paso-dot" id="dot-2"></div>
+        <div class="paso-dot" id="dot-3"></div>
+        <div class="paso-dot" id="dot-4"></div>
+        <div class="paso-dot" id="dot-5"></div>
+        <div class="paso-dot" id="dot-6"></div>
+        <div class="paso-dot" id="dot-7"></div>
+        <div class="paso-dot" id="dot-8"></div>
+      </div>
 
-  <!-- Paso 2: Hora (controlado por JS) -->
-  <div class="paso oculto" id="paso-hora">
-    <h2>Selecciona la hora</h2>
-    <div id="contenedor-horas">
-              <select id="hora">
-          <option value="" disabled selected>Seleccionar hora</option>
-        </select>
-    </div> <!-- Aquí tu JS inyecta los botones -->
-    <div class="botones">
-      <button type="button" onclick="anteriorPaso('paso-fecha')">Atrás</button>
-      <button type="button" onclick="siguientePaso('paso-ubicacion')">Continuar</button>
+      <form id="form-reserva">
+
+        <!-- Paso 1: Fecha -->
+        <div class="paso" id="paso-fecha">
+          <h2><i class="far fa-calendar-alt" style="font-size:1.4rem; margin-right:0.6rem;"></i>Selecciona la fecha</h2>
+          <div class="campo-grupo">
+            <label for="fecha">Fecha de la reserva</label>
+            <input type="date" id="fecha" name="fecha" required>
+          </div>
+          <div class="botones">
+            <button type="button" class="btn-form-siguiente" onclick="siguientePasoValidado('paso-hora', 1)">Continuar &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Paso 2: Hora -->
+        <div class="paso oculto" id="paso-hora">
+          <h2><i class="far fa-clock" style="font-size:1.4rem; margin-right:0.6rem;"></i>Selecciona la hora</h2>
+          <div class="campo-grupo">
+            <label for="hora">Hora disponible</label>
+            <select id="hora" required>
+              <option value="" disabled selected>Seleccionar hora</option>
+            </select>
+          </div>
+          <div class="botones">
+            <button type="button" class="btn-form-atras" onclick="anteriorPasoNav('paso-fecha', 1)">← Atrás</button>
+            <button type="button" class="btn-form-siguiente" onclick="siguientePasoValidado('paso-ubicacion', 2)">Continuar &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Paso 3: Ubicación -->
+        <div class="paso oculto" id="paso-ubicacion">
+          <h2><i class="fas fa-map-marker-alt" style="font-size:1.4rem; margin-right:0.6rem;"></i>Ubicación</h2>
+          <div class="campo-grupo">
+            <label for="ubicacion">¿Dónde prefieres sentarte?</label>
+            <select id="ubicacion" onchange="actualizarMesas()" required>
+              <option value="salon">Salón Principal</option>
+              <option value="terraza">Terraza</option>
+            </select>
+          </div>
+          <div class="botones">
+            <button type="button" class="btn-form-atras" onclick="anteriorPasoNav('paso-hora', 2)">← Atrás</button>
+            <button type="button" class="btn-form-siguiente" onclick="siguientePasoValidado('paso-mesa', 3)">Continuar &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Paso 4: Mesa -->
+        <div class="paso oculto" id="paso-mesa">
+          <h2><i class="fas fa-chair" style="font-size:1.4rem; margin-right:0.6rem;"></i>Selecciona la mesa</h2>
+          <div class="campo-grupo">
+            <label for="mesa">Mesa disponible</label>
+            <select id="mesa" required></select>
+          </div>
+          <div class="botones">
+            <button type="button" class="btn-form-atras" onclick="anteriorPasoNav('paso-ubicacion', 3)">← Atrás</button>
+            <button type="button" class="btn-form-siguiente" onclick="siguientePasoValidado('paso-personas', 4)">Continuar &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Paso 5: Personas -->
+        <div class="paso oculto" id="paso-personas">
+          <h2><i class="fas fa-users" style="font-size:1.4rem; margin-right:0.6rem;"></i>Número de personas</h2>
+          <div class="campo-grupo">
+            <label for="personas">¿Cuántas personas asistirán?</label>
+            <input type="number" id="personas" min="1" max="20" placeholder="Ej: 4" required>
+          </div>
+          <div class="botones">
+            <button type="button" class="btn-form-atras" onclick="anteriorPasoNav('paso-mesa', 4)">← Atrás</button>
+            <button type="button" class="btn-form-siguiente" onclick="siguientePasoValidado('paso-decoracion', 5)">Continuar &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Paso 6: Decoración -->
+        <div class="paso oculto" id="paso-decoracion">
+          <h2><i class="fas fa-star" style="font-size:1.4rem; margin-right:0.6rem;"></i>Plan de decoración</h2>
+          <div class="campo-grupo">
+            <label for="decoracion">Elige un plan (opcional)</label>
+            <select id="decoracion" required>
+              <option value="ninguno" selected>Sin decoración</option>
+              <option value="plata">Plan Plata</option>
+              <option value="oro">Plan Oro</option>
+              <option value="diamante">Plan Diamante</option>
+            </select>
+          </div>
+          <div class="botones">
+            <button type="button" class="btn-form-atras" onclick="anteriorPasoNav('paso-personas', 5)">← Atrás</button>
+            <button type="button" class="btn-form-siguiente" onclick="siguientePasoValidado('paso-observaciones', 6)">Continuar &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Paso 7: Observaciones -->
+        <div class="paso oculto" id="paso-observaciones">
+          <h2><i class="far fa-comment-alt" style="font-size:1.4rem; margin-right:0.6rem;"></i>Observaciones</h2>
+          <div class="campo-grupo">
+            <label for="observaciones">Comentarios adicionales (opcional)</label>
+            <textarea id="observaciones" placeholder="Alergias, ocasión especial, preferencias de mesa…"></textarea>
+          </div>
+          <div class="botones">
+            <button type="button" class="btn-form-atras" onclick="anteriorPasoNav('paso-decoracion', 6)">← Atrás</button>
+            <button type="button" class="btn-form-siguiente" onclick="siguientePasoValidado('paso-nombre', 7)">Continuar &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Paso 8: Datos de contacto -->
+        <div class="paso oculto" id="paso-nombre">
+          <h2><i class="far fa-user" style="font-size:1.4rem; margin-right:0.6rem;"></i>Tus datos</h2>
+          <div class="campo-grupo">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" placeholder="Ej: Ana Rodríguez" required>
+          </div>
+          <div class="campo-grupo">
+            <label for="telefono">Número de celular / WhatsApp</label>
+            <input type="tel" id="telefono" placeholder="Ej: 3156191389" required>
+          </div>
+          <div class="botones">
+            <button type="button" class="btn-form-atras" onclick="anteriorPasoNav('paso-observaciones', 7)">← Atrás</button>
+            <button type="button" id="btn-reservar" class="btn-form-confirmar">
+              <i class="fab fa-whatsapp"></i> Confirmar Reserva
+            </button>
+          </div>
+        </div>
+
+      </form>
     </div>
+
+    <!-- Alternativa WhatsApp -->
+    <p style="text-align:center; margin-top:2.5rem; font-size:1.4rem; color: var(--gris-texto);">
+      ¿Prefieres reservar directamente?
+      <a href="https://wa.me/573156191389?text=Hola%21%20Quisiera%20hacer%20una%20reserva%20en%20Zagrada%20%F0%9F%8D%BD%EF%B8%8F" target="_blank" style="color: #4cd964; margin-left:0.4rem;">
+        <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
+      </a>
+    </p>
   </div>
 
-  <!-- Paso 3: Ubicación -->
-  <div class="paso oculto" id="paso-ubicacion">
-    <h2>Selecciona la ubicación</h2>
-    <select id="ubicacion" onchange="actualizarMesas()" required>
-      <option value="salon">Salón</option>
-      <option value="terraza">Terraza</option>
-    </select>
-    <div class="botones">
-      <button type="button" onclick="anteriorPaso('paso-hora')">Atrás</button>
-      <button type="button" onclick="siguientePaso('paso-mesa')">Continuar</button>
-    </div>
-  </div>
 
-  <!-- Paso 4: Mesa -->
-  <div class="paso oculto" id="paso-mesa">
-    <h2>Selecciona la mesa</h2>
-    <select id="mesa" required></select>
-    <div class="botones">
-      <button type="button" onclick="anteriorPaso('paso-ubicacion')">Atrás</button>
-      <button type="button" onclick="siguientePaso('paso-personas')">Continuar</button>
-    </div>
-  </div>
-
-  <!-- Paso 5: Personas -->
-  <div class="paso oculto" id="paso-personas">
-    <h2>¿Cuántas personas?</h2>
-    <input type="number" id="personas" min="1" max="20" required>
-    <div class="botones">
-      <button type="button" onclick="anteriorPaso('paso-mesa')">Atrás</button>
-      <button type="button" onclick="siguientePaso('paso-decoracion')">Continuar</button>
-    </div>
-  </div>
-
-  <!-- Paso 6: Decoración -->
-  <div class="paso oculto" id="paso-decoracion">
-    <h2>Plan de decoración</h2>
-    <select id="decoracion" required>
-      <option value="" disabled selected>Seleccionar</option>
-      <option value="plata">Ninguno</option>
-      <option value="plata">Plata</option>
-      <option value="oro">Oro</option>
-      <option value="diamante">Diamante</option>
-    </select>
-    <div class="botones">
-      <button type="button" onclick="anteriorPaso('paso-personas')">Atrás</button>
-      <button type="button" onclick="siguientePaso('paso-observaciones')">Continuar</button>
-    </div>
-  </div>
-
-  <!-- Paso 7: Observaciones -->
-  <div class="paso oculto" id="paso-observaciones">
-    <h2>Observaciones</h2>
-    <textarea id="observaciones" placeholder="Opcional"></textarea>
-    <div class="botones">
-      <button type="button" onclick="anteriorPaso('paso-decoracion')">Atrás</button>
-     <button type="button" onclick="siguientePaso('paso-nombre')">Continuar</button>
-    </div>
-  </div>
-
-  <!-- Paso 8: Nombre -->
-<div class="paso oculto" id="paso-nombre">
-  <h2>¿Quién hace la reserva?</h2>
-  <input type="text" id="nombre" placeholder="Ej: Ana Rodríguez" required>
-  <div class="botones">
-    <button type="button" onclick="anteriorPaso('paso-decoracion')">Atrás</button>
-     <button type="button" id="btn-reservar">Reservar</button>
-  </div>
-</div>
-
-</form>
-
-  <hr class="separador">
-
+  <!-- ══ FOOTER ═════════════════════════════════════════ -->
   <footer class="footer">
     <div class="contenedor">
-      <div class="barra">
-        <a class="logo" href="/index.html">
-          <h1 class="logo__nombre">Zagrada Restaurante <span class="logo__bold">y Café</span></h1>
-        </a>
-        <nav class="navegacion">
-          <a href="/index.html#nosotros" class="navegacion__enlace">Nosotros</a>
-          <a href="/html/menu.html" class="navegacion__enlace">Menú</a>
-          <a href="/html/bebidas.html" class="navegacion__enlace">Bebidas</a>
-        </nav>
+      <div class="footer-grid">
+
+        <div class="footer-col">
+          <h4>Zagrada</h4>
+          <p>Restaurante &amp; Café</p>
+          <p style="margin-top:1.2rem; font-style:italic; font-size:1.3rem; color: rgba(201,168,76,0.5);">
+            Sabor que se siente sagrado
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <a href="/index.html">Inicio</a>
+          <a href="/html/menu.html">Menú</a>
+          <a href="/html/bebidas.html">Bebidas</a>
+          <a href="/html/reservas.html">Reservas</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contáctanos</h4>
+          <a href="https://wa.me/573156191389" target="_blank">
+            <i class="fab fa-whatsapp"></i>&nbsp; +57 315 619 1389
+          </a>
+          <p style="margin-top:1.5rem; line-height:2;">
+            Martes a Domingo<br>11:30 am – 8:30 pm<br>
+            <span style="color:#c0392b; font-size:1.2rem;">Lunes: Cerrado</span>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <div class="social-footer">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/573156191389" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Zagrada Restaurante y Café &nbsp;·&nbsp; Todos los derechos reservados</p>
       </div>
     </div>
   </footer>
 
-  <script src="/js/menu.js"></script>
+
   <script>
     function toggleMenu() {
       document.getElementById('sideMenu').classList.toggle('active');
     }
+    document.addEventListener('click', function (e) {
+      const menu = document.getElementById('sideMenu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (menu.classList.contains('active') && !menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('active');
+      }
+    });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-</body>
+  <script src="/js/reservas.js"></script>
 
+</body>
 </html>

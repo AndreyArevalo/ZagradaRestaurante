@@ -5,128 +5,142 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zagrada Restaurante y Café</title>
-  <link rel="prefetch" href="/html/menu.html" as="document">
-  <script src="/js/vendor/sweetalert2.js"></script>
-  <script src="/js/reservas.js"></script>
-  <link rel="stylesheet" href="../css/vendor/normalize.css">
+  <meta name="description" content="Zagrada Restaurante y Café — Sabor que se siente sagrado. Reserva tu mesa y descubre nuestra gastronomía.">
+  <link rel="stylesheet" href="css/vendor/normalize.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=PT+Sans:wght@700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
+  <!-- ══ HERO ══════════════════════════════════════════ -->
   <header class="header">
     <section class="barra">
-
-      <!-- Barra superior fija -->
       <div class="topbar">
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
         <div class="topbar-right">
-          <a href="html/reservas.html" class="btn-reservar-top">RESERVAR</a>
+          <a href="html/reservas.html" class="btn-reservar-top">
+            <i class="far fa-calendar-alt"></i> RESERVAR
+          </a>
         </div>
 
-
-        <!-- Menú lateral oculto -->
+        <!-- Menú lateral -->
         <div id="sideMenu" class="side-menu">
           <div class="menu-header"></div>
           <ul class="menu-links">
             <li><a href="/index.html">INICIO</a></li>
             <li><a href="/html/menu.html">MENÚ</a></li>
             <li><a href="/html/bebidas.html">BEBIDAS</a></li>
-            <li><a href="#EVENTOS">EVENTOS</a></li>
-            <li><a href="/html/reservas.html" class="btn-reservar">RESERVAR AHORA</a></li>
+            <li>
+              <a href="/html/reservas.html" class="btn-reservar">
+                <i class="far fa-calendar-alt"></i> RESERVAR AHORA
+              </a>
+            </li>
           </ul>
-
           <div class="social-icons">
-            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://wa.me/573156191389" target="_blank" aria-label="WhatsApp">
-              <i class="fab fa-whatsapp"></i>
-            </a>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/573156191389" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           </div>
-
-
         </div>
       </div>
-      <!-- Branding central -->
-
     </section>
+
     <section class="nombre">
       <div class="header__texto">
-        <h2>Zagrada Restaurante y Café</h2>
+        <div class="header__ornamento"></div>
+        <h1>ZAGRADA</h1>
+        <p class="header__subtitulo">Restaurante &amp; Café</p>
+        <div class="header__ornamento"></div>
+        <div class="hero-ctas">
+          <a href="html/menu.html" class="btn-hero-primary">
+            <i class="fas fa-utensils"></i> Nuestro Menú
+          </a>
+          <a href="html/reservas.html" class="btn-hero-secondary">
+            <i class="far fa-calendar-alt"></i> Reservar Mesa
+          </a>
+        </div>
       </div>
     </section>
+
+    <div class="scroll-indicator">
+      <i class="fas fa-chevron-down"></i>
+    </div>
   </header>
 
 
-
-
-
-  <hr class="separador"> <!--  SEPARADOR  -->
-
+  <!-- ══ GALERÍA ═══════════════════════════════════════ -->
   <section class="galeria-zagrada">
-    <h2 class="centrar-texto">Conoce Zagrada</h2>
+    <div class="titulo-seccion">
+      <h2>Conoce Zagrada</h2>
+    </div>
 
-    <!-- Sección Salón -->
     <div class="subseccion">
       <h3>Salón Principal</h3>
       <div class="galeria-grid">
         <img loading="lazy" src="/img/salon1.jpg" alt="Vista del salón principal">
         <img loading="lazy" src="/img/salon2.jpg" alt="Decoración del salón">
-        <video loading="lazy" src="video/salon.mp4" controls width="400" height="300"></video>
+        <video loading="lazy" src="video/salon.mp4" controls></video>
       </div>
     </div>
 
-    <!-- Sección Terraza -->
     <div class="subseccion">
       <h3>Terraza</h3>
       <div class="galeria-grid">
         <img loading="lazy" src="/img/terraza1.jpg" alt="Vista de la terraza">
-        <img loading="lazy" src="/img/terraza2.avif" alt="Ambiente exterior">
-        <video loading="lazy" src="video/terraza.mp4" controls width="400" height="300"></video>
+        <img loading="lazy" src="/img/terraza2.avif" alt="Ambiente exterior de la terraza">
+        <video loading="lazy" src="video/terraza.mp4" controls></video>
       </div>
     </div>
   </section>
-  <hr class="separador">
 
-  <!-- Planes decoracion -->
-  <div class="contenedor planes-decoracion">
-    <section class="planes-decoracion contenedor">
-      <h3 class="centrar-texto">Planes de Decoración</h3>
-      <div class="planes-grid">
-        <div class="plan-card">
-          <img loading="lazy" src="../img/planplata.jpg" alt="Plan Plata">
-        </div>
-        <div class="plan-card">
-          <img loading="lazy" src="../img/planoro.jpg" alt="Plan Oro">
-        </div>
-        <div class="plan-card">
-          <img loading="lazy" src="../img/plandiamante.jpg" alt="Plan Diamante">
-        </div>
+
+  <!-- ══ CTA RESERVA ═══════════════════════════════════ -->
+  <section class="reserva-cta-strip">
+    <h2>Reserva tu Mesa</h2>
+    <p>Elige la fecha, hora y ubicación perfecta para tu visita. Puedes reservar directamente desde aquí o contactarnos por WhatsApp.</p>
+    <div class="cta-botones">
+      <a href="html/reservas.html" class="btn-cta-web">
+        <i class="far fa-calendar-alt"></i> Reservar en la Web
+      </a>
+      <a href="https://wa.me/573156191389?text=Hola%21%20Quisiera%20hacer%20una%20reserva%20en%20Zagrada%20%F0%9F%8D%BD%EF%B8%8F" target="_blank" class="btn-cta-whatsapp">
+        <i class="fab fa-whatsapp"></i> Reservar por WhatsApp
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ══ PLANES DE DECORACIÓN ══════════════════════════ -->
+  <section class="planes-decoracion">
+    <div class="titulo-seccion contenedor">
+      <h2>Planes de Decoración</h2>
+    </div>
+    <div class="planes-grid">
+      <div class="plan-card">
+        <img loading="lazy" src="img/planplata.jpg" alt="Plan Plata">
       </div>
-    </section>
-  </div>
-  
-  <hr class="separador">
+      <div class="plan-card">
+        <img loading="lazy" src="img/planoro.jpg" alt="Plan Oro">
+      </div>
+      <div class="plan-card">
+        <img loading="lazy" src="img/plandiamante.jpg" alt="Plan Diamante">
+      </div>
+    </div>
+  </section>
 
+
+  <!-- ══ SOBRE NOSOTROS ════════════════════════════════ -->
   <section class="sobre-nosotros" id="nosotros">
     <div class="contenedor">
       <div class="sobre-nosotros__grid">
         <div class="sobre-nosotros__contenido">
           <h2>Sobre Nosotros</h2>
-          <p>En Zagrada Restaurante y Café, creemos que la comida es sagrada. Cada plato que servimos está preparado con
-            ingredientes frescos y locales, siguiendo recetas tradicionales que han pasado de generación en generación.
-          </p>
-          <p>Nuestro compromiso es ofrecerte una experiencia gastronómica única, donde cada bocado te conecte con los
-            sabores auténticos de nuestra tierra. Ven y descubre por qué la comida es Zagrada.</p>
+          <p>En Zagrada Restaurante y Café, creemos que la comida es sagrada. Cada plato que servimos está preparado con ingredientes frescos y locales, siguiendo recetas tradicionales que han pasado de generación en generación.</p>
+          <p>Nuestro compromiso es ofrecerte una experiencia gastronómica única, donde cada bocado te conecte con los sabores auténticos de nuestra tierra. Ven y descubre por qué la comida es Zagrada.</p>
         </div>
         <div class="sobre-nosotros__imagen">
           <img loading="lazy" src="/img/nosotros.jpg" alt="Interior del restaurante Zagrada">
@@ -136,58 +150,116 @@
   </section>
 
 
-  <hr class="separador">
-
-  <section class="mapa-ubicacion contenedor">
-    <div>
-      <h2>Como llegar</h2>
-      <video loading="lazy" src="video/comollegar.mp4" controls width="400" height="300"></video>
-    </div>
-    <div>
-      <h2>Encuentranos aquí</h2>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246.77763745621638!2d-73.35908904439104!3d8.258705712425346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e677b23e3cf5a09%3A0x5466435a78d78af4!2sZagrada%20Restaurante%20%26%20Caf%C3%A9!5e0!3m2!1ses!2sco!4v1756338384775!5m2!1ses!2sco"
-        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <!-- ══ HORARIO ════════════════════════════════════════ -->
+  <section class="horario">
+    <div class="contenedor">
+      <div class="titulo-seccion">
+        <h2>Horario de Atención</h2>
+      </div>
+      <div class="horario-grid">
+        <div class="horario-item">
+          <div class="dia">Martes — Viernes</div>
+          <div class="hora">11:30 am — 8:30 pm</div>
+        </div>
+        <div class="horario-item">
+          <div class="dia">Sábado — Domingo</div>
+          <div class="hora">11:30 am — 8:30 pm</div>
+        </div>
+        <div class="horario-item">
+          <div class="dia">Lunes</div>
+          <div class="hora cerrado">Cerrado</div>
+        </div>
+      </div>
     </div>
   </section>
 
 
+  <!-- ══ MAPA / UBICACIÓN ══════════════════════════════ -->
+  <div class="mapa-wrapper">
+    <div class="contenedor">
+      <div class="titulo-seccion">
+        <h2>Encuéntranos</h2>
+      </div>
+    </div>
+    <div class="mapa-ubicacion">
+      <div>
+        <h2>Cómo llegar</h2>
+        <video loading="lazy" src="video/comollegar.mp4" controls></video>
+      </div>
+      <div>
+        <h2>Nuestra ubicación</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d246.77763745621638!2d-73.35908904439104!3d8.258705712425346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e677b23e3cf5a09%3A0x5466435a78d78af4!2sZagrada%20Restaurante%20%26%20Caf%C3%A9!5e0!3m2!1ses!2sco!4v1756338384775!5m2!1ses!2sco"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
 
-  <hr class="separador">
 
+  <!-- ══ FOOTER ═════════════════════════════════════════ -->
   <footer class="footer">
     <div class="contenedor">
-      <div class="barra">
-        <a class="logo" href="index.html" id="logo-footer">
-          <h1 class="logo__nombre">Zagrada <span class="logo__bold">Restaurante y Café</span></h1>
-        </a>
-        <nav class="navegacion">
-          <a href="#nosotros" class="navegacion__enlace">Nosotros</a>
-          <a href="/html/menu.html" class="navegacion__enlace">Menú</a>
-          <a href="/html/bebidas.html" class="navegacion__enlace">Bebidas</a>
-        </nav>
+      <div class="footer-grid">
+
+        <div class="footer-col">
+          <h4>Zagrada</h4>
+          <p>Restaurante &amp; Café</p>
+          <p style="margin-top:1.2rem; font-style:italic; font-size:1.3rem; color: rgba(201,168,76,0.5);">
+            Sabor que se siente sagrado
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <a href="/index.html">Inicio</a>
+          <a href="/html/menu.html">Menú</a>
+          <a href="/html/bebidas.html">Bebidas</a>
+          <a href="/html/reservas.html">Reservas</a>
+          <a href="#nosotros">Sobre Nosotros</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contáctanos</h4>
+          <a href="https://wa.me/573156191389" target="_blank">
+            <i class="fab fa-whatsapp"></i>&nbsp; +57 315 619 1389
+          </a>
+          <p style="margin-top: 1.5rem; line-height: 2;">
+            Martes a Domingo<br>11:30 am – 8:30 pm<br>
+            <span style="color: #c0392b; font-size:1.2rem;">Lunes: Cerrado</span>
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <div class="social-footer">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/573156191389" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Zagrada Restaurante y Café &nbsp;·&nbsp; Todos los derechos reservados</p>
       </div>
     </div>
   </footer>
 
-  <script src="../js/reservas.js"></script>
-  <script>
-    const logo = document.getElementById('logo-footer');
 
-    logo.addEventListener('click', function (e) {
-      const isIndex = window.location.pathname.endsWith('index.html') || window.location.pathname === '/';
-      if (isIndex) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    });
-  </script>
   <script>
     function toggleMenu() {
       document.getElementById('sideMenu').classList.toggle('active');
     }
+    document.addEventListener('click', function (e) {
+      const menu = document.getElementById('sideMenu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (menu.classList.contains('active') && !menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('active');
+      }
+    });
   </script>
-</body>
 
+
+
+</body>
 </html>
